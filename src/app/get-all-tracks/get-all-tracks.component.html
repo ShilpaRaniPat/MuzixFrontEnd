@@ -1,0 +1,31 @@
+<div class="container" style="text-align:center">
+  <div class="row" style="text-align:center">
+    <div class="col-md-12" style="font-size:22px">My Playlist</div>
+    <br><br><br><br>
+  </div>
+  <div class="row" style="text-align:center" style="width:100%"   style="background-color:skyblue">
+    <div *ngFor="let blog of tracks" class="col-md-4">
+      <img class="card-img-top" src='{{blog.imgUrl}}' alt="Card image cap">
+      <!-- <h4>{{trackComments}}</h4> -->
+      <div class="panel panel-default">
+        <!-- <div class="panel-heading">{{blog.trackComments}}</div>
+        <div class="panel-heading">{{blog.trackName}}</div> -->
+
+        <div class="panel-heading" style="background-color: tan; font-style: oblique; font-weight: bold;">Track Name: {{blog.trackName| uppercase}}</div>
+        <div class="panel-heading" style="background-color:yellow; font-style: oblique; font-weight: bold;">Artist : {{blog.trackComments}}</div>
+        <div class="panel-body" style="background-color: yellowgreen">
+          <p><input class="form-control mr-sm-6" type="text" [(ngModel)]="blog.comment"></p>
+        </div>
+        <div class="panel-footer"><br />
+          <a [routerLink]="['/updatetrack',blog.trackId,blog.comment]" class="btn btn-info">Update</a>
+          <a [routerLink]="['/deletetrack',blog.trackId]" class="btn btn-danger">Delete</a>
+        </div>
+      </div>
+  
+  
+      <br />
+    </div>
+  
+  </div>
+  
+  </div>
